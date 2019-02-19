@@ -1,0 +1,41 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  freemarker:
+    cache: false    
+#session store type使用来存放session的存储方式,Spring boot中只支持redis方式。 由于本应用暂无需将session放入redis的需求，故这里就可以将session store type设置为none.
+  session.store-type: none 
+#  redis:
+#    host: 127.0.0.1
+#    password: 123456
+#    port: 6379
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+      url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        initial-size: 5
+        min-idle: 5
+        max-active: 20
+        max-wait: 60000
+  profiles:
+    active: test
+logging:
+  level:
+    root: info
+    org.hibernate : info
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.yasaka.stock : debug
+server:
+  port: 8100
+mybatis:
+  typeAliasesPackage: springcloudproviderconfig.entity
+  mapperLocations: classpath:com/entity/*.xml
