@@ -3,7 +3,7 @@ spring:
     name: springcloud-provider-config
 #  cloud:
 #    config:
-#      #config-server的配置，不需要硬编码config-server的地址，使用service-id去eureka-server获取cong-server的地址
+#      #config-server的配置，不需要硬编码config-server的地址，使用service-id去eureka-server获取config-server的地址
 #      discovery:
 #        enabled: true
 #        service-id: springcloud-config-server
