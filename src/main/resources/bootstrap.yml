@@ -19,6 +19,7 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
     appname: springcloud-provider-config
+#该配置属性用于设置该端点是否需要授权才能访问，默认是true spring boot actuator
 management:
   security:
     enabled: false
